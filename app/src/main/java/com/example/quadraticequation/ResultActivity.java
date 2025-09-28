@@ -20,6 +20,7 @@ public class ResultActivity extends AppCompatActivity {
     Button btnGoBack;
     ImageView imageIllustration;
     private String solution = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +33,7 @@ public class ResultActivity extends AppCompatActivity {
         double a = getIntent().getDoubleExtra("a",0);
         double b = getIntent().getDoubleExtra("b",0);
         double c = getIntent().getDoubleExtra("c",0);
-        String solution= solveQuadratic(a,b,c);
+        solution= solveQuadratic(a,b,c);
         textSolution.setText(solution);
 
 
@@ -45,23 +46,56 @@ public class ResultActivity extends AppCompatActivity {
         finish();
     }
     private String solveQuadratic(double a, double b, double c) {
+        boolean isH = a > 0;
         if (a==0){
             if(b==0){
+                if(isH){
+                    imageIllustration.setImageResource(R.drawable.happy_no_root);
+                }
+                else {
+                    imageIllustration.setImageResource(R.drawable.sad_no_root);
+                }
                 return (c==0)? "Infinite solutions": "No solution";
             }
             else {
-                return ("solution: x=" + (-c/b));
+                double x=-c/b;
+                if (isH){
+                    imageIllustration.setImageResource(R.drawable.happy_one_root);
+                }
+                else{
+                    imageIllustration.setImageResource(R.drawable.sad_one_root);
+                }
+                return ("linear solution: x="+x);
             }
         }
         double d= b*b -4*a*c;
         if (d<0){
+            if (isH){
+                imageIllustration.setImageResource(R.drawable.happy_no_root);
+            }
+            else{
+                imageIllustration.setImageResource(R.drawable.sad_no_root);
+            }
         return("no real solutions(Discriminant <0)");
         } else if (d == 0) {
             double x = -b / (2 * a);
+            if (isH){
+                imageIllustration.setImageResource(R.drawable.happy_one_root);
+            }
+            else{
+                imageIllustration.setImageResource(R.drawable.sad_one_root);
+            }
             return "One solution: x = " + x;
-        } else {
+        }
+        else {
             double x1 = (-b + Math.sqrt(d)) / (2 * a);
             double x2 = (-b - Math.sqrt(d)) / (2 * a);
+            if(isH){
+                imageIllustration.setImageResource(R.drawable.happy_two_roots);
+            }
+            else{
+                imageIllustration.setImageResource(R.drawable.sad_two_roots);
+            }
             return "Two solutions:\nx1 = " + x1 + "\nx2 = " + x2;
         }
     }
