@@ -7,4 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".ResultActivity">
 
+    <TextView
+        android:id="@+id/textSolution"
+        android:layout_width="243dp"
+        android:layout_height="29dp"
+        android:text="Solution will be shown here"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="107dp" />
+
+    <ImageView
+        android:id="@+id/ImageIllustration"
+        android:layout_width="164dp"
+        android:layout_height="160dp"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="282dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/btnGoBack"
+        android:layout_width="103dp"
+        android:layout_height="62dp"
+        android:onClick="goBack"
+        android:text="Back"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="268dp"
+        tools:layout_editor_absoluteY="558dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
