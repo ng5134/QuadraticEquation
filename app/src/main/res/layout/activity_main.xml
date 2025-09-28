@@ -12,58 +12,93 @@
         android:id="@+id/inputA"
         android:layout_width="238dp"
         android:layout_height="56dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="enter a"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="90dp" />
+        app:layout_constraintBottom_toTopOf="@+id/inputB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/inputB"
         android:layout_width="238dp"
         android:layout_height="56dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="30dp"
         android:ems="10"
         android:hint="enter b"
         android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@+id/inputA"
-        tools:layout_editor_absoluteX="100dp" />
+        app:layout_constraintBottom_toTopOf="@+id/inputC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputA" />
 
     <EditText
         android:id="@+id/inputC"
         android:layout_width="238dp"
         android:layout_height="56dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="enter c"
         android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@+id/inputB"
-        tools:layout_editor_absoluteX="100dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btnSolve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputB" />
 
     <Button
         android:id="@+id/btnSolve"
-        android:layout_width="163dp"
-        android:layout_height="74dp"
+        android:layout_width="170dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
         android:onClick="solveEquation"
         android:text="Solve Equation"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintBottom_toTopOf="@+id/LastResult"
+        app:layout_constraintEnd_toStartOf="@+id/btnRandom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputC" />
 
     <Button
         android:id="@+id/btnRandom"
         android:layout_width="153dp"
         android:layout_height="73dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="47dp"
         android:onClick="randomEquation"
         android:text="Random Coefficients"
-        tools:layout_editor_absoluteX="242dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintBottom_toTopOf="@+id/LastResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnSolve"
+        app:layout_constraintTop_toBottomOf="@+id/inputC" />
 
     <TextView
         android:id="@+id/LastResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginBottom="216dp"
         android:text="last solution will appear here"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="496dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSolve" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

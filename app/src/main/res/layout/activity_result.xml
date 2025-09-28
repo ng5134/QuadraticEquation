@@ -9,28 +9,47 @@
 
     <TextView
         android:id="@+id/textSolution"
-        android:layout_width="243dp"
-        android:layout_height="29dp"
+        android:layout_width="282dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="50dp"
         android:text="Solution will be shown here"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="107dp" />
+        app:layout_constraintBottom_toTopOf="@+id/ImageIllustration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ImageIllustration"
         android:layout_width="164dp"
         android:layout_height="160dp"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="282dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="146dp"
+        android:layout_marginEnd="221dp"
+        android:layout_marginBottom="289dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSolution"
+        tools:srcCompat="@drawable/happy_two_roots" />
 
     <Button
         android:id="@+id/btnGoBack"
         android:layout_width="103dp"
         android:layout_height="62dp"
+        android:layout_marginStart="269dp"
+        android:layout_marginTop="422dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="111dp"
         android:onClick="goBack"
         android:text="Back"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="268dp"
-        tools:layout_editor_absoluteY="558dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSolution" />
 </androidx.constraintlayout.widget.ConstraintLayout>
