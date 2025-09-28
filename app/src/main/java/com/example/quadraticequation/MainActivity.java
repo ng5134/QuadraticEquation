@@ -49,11 +49,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnRandom.setOnClickListener(v -> {
+            Random rand= new Random();
+            int a= rand.nextInt(9)+1;
+            int b= rand.nextInt(20)-10;
+            int c= rand.nextInt(20)-10;
+
+            inputA.setText(String.valueOf(a));
+            inputB.setText(String.valueOf(b));
+            inputC.setText(String.valueOf(c));
+        });
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode ==1 && resultCode== RESULT_OK){
+            lastSolution= data.getStringExtra("solution");
+            lastResult.setText("Last solution:"+ lastSolution);
+        }
     }
 }
-
-
-double s=0;
-double s1=0;
-s= (-b+root(squer(b)-(4*a*c)))/2*a;
-s1= (-b-root(squer(b)-(4*a*c)))/2*a;
