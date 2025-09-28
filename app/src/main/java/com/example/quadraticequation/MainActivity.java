@@ -1,9 +1,11 @@
 package com.example.quadraticequation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +31,23 @@ public class MainActivity extends AppCompatActivity {
         btnSolve= findViewById(R.id.btnSolve);
         btnRandom= findViewById(R.id.btnRandom);
         lastResult= findViewById(R.id.LastResult);
+
+        btnSolve.setOnClickListener(v -> {
+            try{
+                double a= Double.parseDouble(inputA.getText().toString());
+                double b= Double.parseDouble(inputB.getText().toString());
+                double c= Double.parseDouble(inputC.getText().toString());
+
+                Intent intent= new Intent(MainActivity.this, ResultActivity.class);
+                intent.putExtra("a", a);
+                intent.putExtra("b", b);
+                intent.putExtra("c", c);
+                startActivityForResult(intent, 1);
+            }
+            catch (NumberFormatException e){
+                Toast.makeText(this, "please enter valid numbers", Toast.LENGTH_SHORT ).show();
+            }
+        });
 
     }
 }
