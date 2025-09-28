@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="solveEquation"
     tools:context=".MainActivity">
 
     <EditText
@@ -21,26 +22,29 @@
         android:id="@+id/inputB"
         android:layout_width="238dp"
         android:layout_height="56dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="enter b"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="181dp" />
+        app:layout_constraintTop_toBottomOf="@+id/inputA"
+        tools:layout_editor_absoluteX="100dp" />
 
     <EditText
         android:id="@+id/inputC"
         android:layout_width="238dp"
         android:layout_height="56dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="enter c"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="261dp" />
+        app:layout_constraintTop_toBottomOf="@+id/inputB"
+        tools:layout_editor_absoluteX="100dp" />
 
     <Button
         android:id="@+id/btnSolve"
         android:layout_width="163dp"
         android:layout_height="74dp"
+        android:onClick="solveEquation"
         android:text="Solve Equation"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="376dp" />
@@ -49,6 +53,7 @@
         android:id="@+id/btnRandom"
         android:layout_width="153dp"
         android:layout_height="73dp"
+        android:onClick="randomEquation"
         android:text="Random Coefficients"
         tools:layout_editor_absoluteX="242dp"
         tools:layout_editor_absoluteY="376dp" />

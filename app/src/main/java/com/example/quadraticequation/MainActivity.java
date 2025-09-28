@@ -2,6 +2,7 @@ package com.example.quadraticequation;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -32,33 +33,33 @@ public class MainActivity extends AppCompatActivity {
         btnRandom= findViewById(R.id.btnRandom);
         lastResult= findViewById(R.id.LastResult);
 
-        btnSolve.setOnClickListener(v -> {
-            try{
-                double a= Double.parseDouble(inputA.getText().toString());
-                double b= Double.parseDouble(inputB.getText().toString());
-                double c= Double.parseDouble(inputC.getText().toString());
+    }
+    public void solveEquation(View view) {
+        try {
+            double a = Double.parseDouble(inputA.getText().toString());
+            double b = Double.parseDouble(inputB.getText().toString());
+            double c = Double.parseDouble(inputC.getText().toString());
 
-                Intent intent= new Intent(MainActivity.this, ResultActivity.class);
-                intent.putExtra("a", a);
-                intent.putExtra("b", b);
-                intent.putExtra("c", c);
-                startActivityForResult(intent, 1);
-            }
-            catch (NumberFormatException e){
-                Toast.makeText(this, "please enter valid numbers", Toast.LENGTH_SHORT ).show();
-            }
-        });
+            Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+            intent.putExtra("a", a);
+            intent.putExtra("b", b);
+            intent.putExtra("c", c);
+            startActivityForResult(intent, 1);
 
-        btnRandom.setOnClickListener(v -> {
-            Random rand= new Random();
-            int a= rand.nextInt(9)+1;
-            int b= rand.nextInt(20)-10;
-            int c= rand.nextInt(20)-10;
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, "please enter valid numbers", Toast.LENGTH_SHORT).show();
+        }
+    }
 
-            inputA.setText(String.valueOf(a));
-            inputB.setText(String.valueOf(b));
-            inputC.setText(String.valueOf(c));
-        });
+    public void randomEquation(View view) {
+        Random rand = new Random();
+        int a = rand.nextInt(9) + 1;
+        int b = rand.nextInt(20) - 10;
+        int c = rand.nextInt(20) - 10;
+
+        inputA.setText(String.valueOf(a));
+        inputB.setText(String.valueOf(b));
+        inputC.setText(String.valueOf(c));
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
