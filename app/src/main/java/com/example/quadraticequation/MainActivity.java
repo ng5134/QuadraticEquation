@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         btnRandom= findViewById(R.id.btnRandom);
         lastResult= findViewById(R.id.LastResult);
 
+        lastResult.setText("Last solution will appear here");
+
     }
     public void solveEquation(View view) {
         try {
